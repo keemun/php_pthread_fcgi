@@ -44,17 +44,15 @@ connect_to_fpm(const char *host, __uint16_t port, int *sock)
         if(rp->ai_family == PF_INET)
         {
 			((struct sockaddr_in *)rp->ai_addr)->sin_port = htons(port);
-            //printf("%u\n", ntohl((((struct sockaddr_in *)rp->ai_addr)->sin_addr).s_addr));
-		}
+	}
         else if(rp->ai_family == PF_INET6)
         {
 			((struct sockaddr_in6 *)rp->ai_addr)->sin6_port = htons(port);
-            //printf("%u\n", ntohl((((struct sockaddr_in *)rp->ai_addr)->sin_addr).s_addr));
-		}
+	}
         else
         {
 			continue;
-		}
+	}
         
         rc = connect(*sock, rp->ai_addr, rp->ai_addrlen);
         if(rc == 0 || errno == EINPROGRESS || errno == COMPAT_EWOULDBLOCK)
@@ -125,8 +123,6 @@ send_env(int *sock, char **keys, char **vals, int len, unsigned short request_id
     for (i=0; i<len; i++) {
         key_len = strlen(*(keys+i));
         val_len = strlen(*(vals+i));
-   //php_printf("%s\n", *(keys+i));
-   //php_printf("%s\n", *(vals+i));
         if (key_len < 127) {
             if (val_len < 127) {
                 tmp_name_value = emalloc(sizeof(char)*(key_len+val_len));
@@ -281,8 +277,6 @@ send_env(int *sock, char **keys, char **vals, int len, unsigned short request_id
                 }
             }
         }
-//        keys++;
-//        vals++;
     }
     return send_ret;
 }
