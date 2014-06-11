@@ -45,7 +45,6 @@ PHP_MINFO_FUNCTION(fastcgi);
 //PHP_FUNCTION(confirm_fastcgi_compiled);	/* For testing, remove later. */
 PHP_FUNCTION(fcgi_set_domain);
 PHP_FUNCTION(fcgi_set_param);
-PHP_FUNCTION(fcgi_prepare);
 PHP_FUNCTION(fcgi_close);
 PHP_FUNCTION(fastcgi);
 /* 
