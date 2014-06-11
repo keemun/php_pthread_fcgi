@@ -2,8 +2,8 @@
 //  connection.c
 //  fastcgi
 //
-//  Created by yjspirit on 14-5-30.
-//  Copyright (c) 2014年 杨剑. All rights reserved.
+//  Created by keemun on 14-5-30.
+//  Copyright (c) 2014年 keemun. All rights reserved.
 //
 
 #include <stdio.h>
